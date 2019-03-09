@@ -17,6 +17,7 @@
 		7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E19027B223100A20054B8F2 /* KragerTextField.swift */; };
 		7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E19027D223102AC0054B8F2 /* EarthView.swift */; };
 		7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */; };
+		7E1902862231BD770054B8F2 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902852231BD770054B8F2 /* Star.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		7E19027B223100A20054B8F2 /* KragerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerTextField.swift; sourceTree = "<group>"; };
 		7E19027D223102AC0054B8F2 /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingStarBackground.swift; sourceTree = "<group>"; };
+		7E1902852231BD770054B8F2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +127,9 @@
 		7E19027A223100940054B8F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E1902842231BD690054B8F2 /* ShootingStars */,
 				7E19027F22310AEB0054B8F2 /* Earth */,
 				7E19027B223100A20054B8F2 /* KragerTextField.swift */,
-				7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +140,15 @@
 				7E19027D223102AC0054B8F2 /* EarthView.swift */,
 			);
 			path = Earth;
+			sourceTree = "<group>";
+		};
+		7E1902842231BD690054B8F2 /* ShootingStars */ = {
+			isa = PBXGroup;
+			children = (
+				7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */,
+				7E1902852231BD770054B8F2 /* Star.swift */,
+			);
+			path = ShootingStars;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 				7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */,
 				7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */,
 				7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */,
+				7E1902862231BD770054B8F2 /* Star.swift in Sources */,
 				7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */,
 				7E190279223100910054B8F2 /* KragerTextFieldViewModel.swift in Sources */,
 				7E190275223100260054B8F2 /* HomeViewController.swift in Sources */,

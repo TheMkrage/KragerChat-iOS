@@ -41,20 +41,13 @@ class EarthView: UIView {
         
         let ease = CAMediaTimingFunction.init(name: .easeInEaseOut)
         spinAnimation.timingFunctions = [ease, ease, ease, ease, ease]
-        spinAnimation.values = [0, pi * 16, -pi, pi * 4, -pi * 8]
+        spinAnimation.repeatCount = .infinity
+        spinAnimation.values = [0, pi * 16, -pi, pi * 3, -pi * 8]
         spinAnimation.keyTimes = [0, 0.3, 0.5, 0.7, 1]
         spinAnimation.duration = 20.0
         spinAnimation.isAdditive = true
         
         imageView.layer.add(spinAnimation, forKey: "spin")
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

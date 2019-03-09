@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var shootingStarBackground: ShootingStarBackground = {
+        let s = ShootingStarBackground()
+        return s
+    }()
+    
     var earth: EarthView = {
         let e = EarthView()
         return e
@@ -17,7 +22,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.init(red: 22.0/255.0, green: 21.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        
+        view.addSubview(shootingStarBackground)
         view.addSubview(earth)
         
         setupConstraints()
@@ -28,5 +34,10 @@ class HomeViewController: UIViewController {
         earth.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -35).isActive = true
         earth.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.40).isActive = true
         earth.heightAnchor.constraint(equalTo: earth.widthAnchor).isActive = true
+        
+        shootingStarBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        shootingStarBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        shootingStarBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        shootingStarBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 }
