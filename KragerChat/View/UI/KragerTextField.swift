@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KragerTextField: UITextField {
+class KragerTextField: UIButton {
     
     convenience init() {
         self.init(frame: .zero)
@@ -24,15 +24,16 @@ class KragerTextField: UITextField {
     }
     
     func initialize() {
-        layer.cornerRadius = 10.0
+        translatesAutoresizingMaskIntoConstraints = false
+        setTitleColor(.white, for: .normal)
+        backgroundColor = UIColor(named: "textFieldFill")
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 3.0
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.height / 2.0
     }
-    */
 
 }

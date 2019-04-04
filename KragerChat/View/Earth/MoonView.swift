@@ -1,16 +1,16 @@
 //
-//  EarthView.swift
+//  MoonView.swift
 //  KragerChat
 //
-//  Created by Matthew Krager on 3/6/19.
+//  Created by Matthew Krager on 3/8/19.
 //  Copyright © 2019 Matthew Krager. All rights reserved.
 //
 
 import UIKit
 
-class EarthView: UIView {
-    
-    var imageView = UIImageView(image: UIImage.init(named: "Earth"))
+class MoonView: UIView {
+
+    var imageView = UIImageView(image: UIImage.init(named: "Moon"))
     
     convenience init() {
         self.init(frame: .zero)
@@ -19,9 +19,7 @@ class EarthView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.shadowOpacity = 1.0
-        imageView.layer.shadowRadius = 20.0
-        imageView.layer.shadowColor = UIColor.yellow.cgColor
+        
         addSubview(imageView)
         beginSpin()
     }
@@ -49,4 +47,5 @@ class EarthView: UIView {
         
         imageView.layer.add(spinAnimation, forKey: "spin")
     }
+
 }
