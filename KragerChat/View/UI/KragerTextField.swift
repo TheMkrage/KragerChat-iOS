@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KragerTextField: UIButton {
+class KragerTextField: UITextField {
     
     convenience init() {
         self.init(frame: .zero)
@@ -25,7 +25,6 @@ class KragerTextField: UIButton {
     
     func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
-        setTitleColor(.white, for: .normal)
         backgroundColor = UIColor(named: "textFieldFill")
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 3.0
