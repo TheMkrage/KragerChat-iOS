@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E22261B979007BF304 /* ChatViewController.swift */; };
+		7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E52261BB56007BF304 /* ChatView.swift */; };
+		7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */; };
+		7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E92261CC15007BF304 /* ChatViewModel.swift */; };
+		7E17D7ED2261CC6B007BF304 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7EC2261CC6B007BF304 /* Message.swift */; };
 		7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902542230FD5D0054B8F2 /* AppDelegate.swift */; };
 		7E19025A2230FD5D0054B8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1902582230FD5D0054B8F2 /* Main.storyboard */; };
 		7E19025C2230FD620054B8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E19025B2230FD620054B8F2 /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E17D7E22261B979007BF304 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7E17D7E52261BB56007BF304 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSentCell.swift; sourceTree = "<group>"; };
+		7E17D7E92261CC15007BF304 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		7E17D7EC2261CC6B007BF304 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7E1902512230FD5D0054B8F2 /* KragerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KragerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1902542230FD5D0054B8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E1902592230FD5D0054B8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E17D7E42261BB3C007BF304 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7E17D7E52261BB56007BF304 /* ChatView.swift */,
+				7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		7E17D7EB2261CC62007BF304 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E17D7EC2261CC6B007BF304 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7E1902482230FD5D0054B8F2 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +122,10 @@
 		7E1902532230FD5D0054B8F2 /* KragerChat */ = {
 			isa = PBXGroup;
 			children = (
+				7E17D7EB2261CC62007BF304 /* Model */,
 				7E19027A223100940054B8F2 /* View */,
-				7E190277223100510054B8F2 /* ViewModels */,
-				7E190276223100470054B8F2 /* ViewControllers */,
+				7E190277223100510054B8F2 /* ViewModel */,
+				7E190276223100470054B8F2 /* ViewController */,
 				7E1902542230FD5D0054B8F2 /* AppDelegate.swift */,
 				7E1902582230FD5D0054B8F2 /* Main.storyboard */,
 				7E19025B2230FD620054B8F2 /* Assets.xcassets */,
@@ -116,20 +144,22 @@
 			path = KragerChatTests;
 			sourceTree = "<group>";
 		};
-		7E190276223100470054B8F2 /* ViewControllers */ = {
+		7E190276223100470054B8F2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				7E190274223100260054B8F2 /* HomeViewController.swift */,
+				7E17D7E22261B979007BF304 /* ChatViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		7E190277223100510054B8F2 /* ViewModels */ = {
+		7E190277223100510054B8F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				7E190278223100910054B8F2 /* KragerTextFieldViewModel.swift */,
+				7E17D7E92261CC15007BF304 /* ChatViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7E19027A223100940054B8F2 /* View */ = {
@@ -164,6 +194,7 @@
 		7E65E7F22255F32800192F98 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7E17D7E42261BB3C007BF304 /* Chat */,
 				7E19027B223100A20054B8F2 /* KragerTextField.swift */,
 				7E65E7F32255F33200192F98 /* KragerButton.swift */,
 				7E65E7F52256A80100192F98 /* UIView+Extensions.swift */,
@@ -277,11 +308,16 @@
 				7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */,
 				7E3ED11F2233A16E00080C23 /* Planet.swift in Sources */,
 				7E1902862231BD770054B8F2 /* Star.swift in Sources */,
+				7E17D7ED2261CC6B007BF304 /* Message.swift in Sources */,
+				7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */,
 				7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */,
+				7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */,
 				7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */,
 				7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */,
 				7E190279223100910054B8F2 /* KragerTextFieldViewModel.swift in Sources */,
 				7E190275223100260054B8F2 /* HomeViewController.swift in Sources */,
+				7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */,
+				7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */,
 				7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

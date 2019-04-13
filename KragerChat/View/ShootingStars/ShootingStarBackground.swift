@@ -20,7 +20,7 @@ class ShootingStarBackground: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.init(red: 22.0/255.0, green: 21.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        backgroundColor = UIColor.init(named: "bg")
         
         beginAnimation()
     }

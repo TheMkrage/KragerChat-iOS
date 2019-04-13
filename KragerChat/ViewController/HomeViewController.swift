@@ -29,11 +29,14 @@ class HomeViewController: UIViewController {
     var letsGoButton: KragerButton = {
         let b = KragerButton()
         b.setTitle("Let's Go!", for: .normal)
+        b.addTarget(self, action: #selector(letsGoPressed(_:)), for: .touchUpInside)
         return b
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.init(named: "bg")
         
         view.addSubview(shootingStarBackground)
         view.addSubview(kragerChatLogo)
@@ -48,7 +51,7 @@ class HomeViewController: UIViewController {
         letsGoButton.animateFromBottom(superView: view)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         kragerChatLogo.heightAnchor.constraint(equalTo: kragerChatLogo.widthAnchor, multiplier: 0.419).isActive = true
         kragerChatLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         kragerChatLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
@@ -59,7 +62,6 @@ class HomeViewController: UIViewController {
         letsGoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         letsGoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         letsGoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        letsGoButton.widthAnchor.constraint(lessThanOrEqualToConstant: 300).isActive = true
 
         earth.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         earth.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -35).isActive = true
@@ -70,5 +72,10 @@ class HomeViewController: UIViewController {
         shootingStarBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         shootingStarBackground.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         shootingStarBackground.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    @objc func letsGoPressed(_ sender: UIButton) {
+        let vc = ChatViewController()
+        show(vc, sender: self)
     }
 }
