@@ -14,8 +14,6 @@ extension UIView {
         transform = CGAffineTransform(translationX: 0, y: distanceBelowToOffscreen)
         UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [], animations: {
             self.transform = CGAffineTransform.identity
-        }) { (isFinished) in
-            print(isFinished)
-        }
+        })
     }
 }

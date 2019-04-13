@@ -26,17 +26,6 @@ class HomeViewController: UIViewController {
         return e
     }()
     
-    var moon: MoonView = {
-        let m = MoonView()
-        return m
-    }()
-    
-    var nameTextField: KragerTextField = {
-        let k = KragerTextField()
-        
-        return k
-    }()
-    
     var letsGoButton: KragerButton = {
         let b = KragerButton()
         b.setTitle("Let's Go!", for: .normal)
@@ -46,21 +35,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         view.addSubview(shootingStarBackground)
         view.addSubview(kragerChatLogo)
         view.addSubview(earth)
-        view.addSubview(moon)
-        view.addSubview(nameTextField)
         view.addSubview(letsGoButton)
         
         setupConstraints()
         view.layoutIfNeeded()
-        // animateSignInArea()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        nameTextField.animateFromBottom(superView: view)
         letsGoButton.animateFromBottom(superView: view)
     }
     
@@ -70,18 +54,12 @@ class HomeViewController: UIViewController {
         kragerChatLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         kragerChatLogo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         
-        nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        nameTextField.bottomAnchor.constraint(equalTo: letsGoButton.topAnchor, constant: -15).isActive = true
-        nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        
         letsGoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         letsGoButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -45).isActive = true
+        letsGoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        letsGoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         letsGoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        letsGoButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        
-        moon.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        moon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        letsGoButton.widthAnchor.constraint(lessThanOrEqualToConstant: 300).isActive = true
 
         earth.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         earth.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -35).isActive = true

@@ -26,13 +26,11 @@ class KragerButton: UIButton {
     func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.init(named: "buttonOutside")
-        layer.borderColor = UIColor.init(named: "buttonOutside")?.cgColor
-        layer.borderWidth = 3.0
+        titleLabel?.font = UIFont.init(name: "HelveticaNeue-Medium", size: 18.0)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = frame.height / 2.0
     }
-
 }
