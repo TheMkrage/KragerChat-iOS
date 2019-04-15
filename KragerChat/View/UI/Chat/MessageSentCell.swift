@@ -8,47 +8,8 @@
 
 import UIKit
 
-class MessageSentCell: UITableViewCell {
-    
-    var didSetConstraints = false
-    
-    var bubbleView: UIView = {
-        let v = UIView()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.backgroundColor = UIColor.init(named: "sentMessage")
-        v.layer.cornerRadius = 7
-        return v
-    }()
-    
-    var messageLabel: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.textColor = .white
-        l.numberOfLines = 0
-        l.text = "This is a cool message lol"
-        return l
-    }()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
-    }
-    
-    private func initialize() {
-        translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .clear
-        
-        contentView.addSubview(bubbleView)
-        bubbleView.addSubview(messageLabel)
-        
-        setNeedsUpdateConstraints()
-        updateConstraintsIfNeeded()
-    }
+class MessageSentCell: MessageCell {
+    override public var bubbleColor: UIColor? { return UIColor.init(named: "sentMessage") }
     
     override func updateConstraints() {
         defer {
@@ -57,22 +18,28 @@ class MessageSentCell: UITableViewCell {
         guard !didSetConstraints else {
             return
         }
-        didSetConstraints = true
-        bubbleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
-        bubbleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
         bubbleView.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 45).isActive = true
-        bubbleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45).isActive = true
-        
-        let messagePadding: CGFloat = 12
-        messageLabel.topAnchor.constraint(equalTo: bubbleView.topAnchor, constant: messagePadding).isActive = true
-        messageLabel.bottomAnchor.constraint(equalTo: bubbleView.bottomAnchor, constant: -messagePadding).isActive = true
-        messageLabel.leadingAnchor.constraint(equalTo: bubbleView.leadingAnchor, constant: messagePadding).isActive = true
-        messageLabel.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -messagePadding).isActive = true
+        bubbleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45
+            ).isActive = true
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        // draw the tail
+        // Draw the message tail
+        let path = UIBezierPath()
+        
+        let A = CGPoint(x: bubbleView.frame.maxX, y: bubbleView.frame.maxY - bubbleCornerRadius)
+        let B = CGPoint(x: bubbleView.frame.maxX + 13.0, y: bubbleView.frame.maxY + 9.0)
+        let C = CGPoint(x: bubbleView.frame.maxX - 16.0, y: bubbleView.frame.maxY)
+        
+        path.move(to: A)
+        path.addLine(to: B)
+        path.addLine(to: C)
+        path.close()
+        
+        bubbleColor?.setFill()
+        
+        path.fill()
     }
 }

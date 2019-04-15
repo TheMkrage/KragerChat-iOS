@@ -13,9 +13,9 @@ class ChatViewController: UIViewController {
     var chatViewModel = ChatViewModel()
     
     lazy var chatView: ChatView = {
-        chatViewModel.messages.append(Message(message: "Hey there!"))
-        chatViewModel.messages.append(Message(message: "This is Krager Chat!"))
-        chatViewModel.messages.append(Message(message: "OMG! This app is so cool and way better than Ishaan Chat, Why? Because Ishaan chat doesnt and will never exist"))
+        chatViewModel.messages.append(Message(message: "Hey there!", didUserSend: true))
+        chatViewModel.messages.append(Message(message: "This is Krager Chat!", didUserSend: false))
+        chatViewModel.messages.append(Message(message: "OMG! This app is so cool and way better than Ishaan Chat, Why? Because Ishaan chat doesnt and will never exist", didUserSend: true))
         let c = ChatView(viewModel: chatViewModel)
         return c
     }()

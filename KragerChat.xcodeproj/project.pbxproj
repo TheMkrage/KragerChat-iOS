@@ -12,6 +12,8 @@
 		7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */; };
 		7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E92261CC15007BF304 /* ChatViewModel.swift */; };
 		7E17D7ED2261CC6B007BF304 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7EC2261CC6B007BF304 /* Message.swift */; };
+		7E17D7EF22641B19007BF304 /* MessageReceivedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7EE22641B19007BF304 /* MessageReceivedCell.swift */; };
+		7E17D7F122641B28007BF304 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7F022641B28007BF304 /* MessageCell.swift */; };
 		7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902542230FD5D0054B8F2 /* AppDelegate.swift */; };
 		7E19025A2230FD5D0054B8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1902582230FD5D0054B8F2 /* Main.storyboard */; };
 		7E19025C2230FD620054B8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E19025B2230FD620054B8F2 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSentCell.swift; sourceTree = "<group>"; };
 		7E17D7E92261CC15007BF304 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		7E17D7EC2261CC6B007BF304 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7E17D7EE22641B19007BF304 /* MessageReceivedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReceivedCell.swift; sourceTree = "<group>"; };
+		7E17D7F022641B28007BF304 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7E1902512230FD5D0054B8F2 /* KragerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KragerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1902542230FD5D0054B8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E1902592230FD5D0054B8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				7E17D7E52261BB56007BF304 /* ChatView.swift */,
+				7E17D7EE22641B19007BF304 /* MessageReceivedCell.swift */,
 				7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */,
+				7E17D7F022641B28007BF304 /* MessageCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */,
+				7E17D7EF22641B19007BF304 /* MessageReceivedCell.swift in Sources */,
 				7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */,
 				7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */,
 				7E3ED11F2233A16E00080C23 /* Planet.swift in Sources */,
@@ -319,6 +326,7 @@
 				7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */,
 				7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */,
 				7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */,
+				7E17D7F122641B28007BF304 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FKX4SDTGM;
 				INFOPLIST_FILE = KragerChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,6 +510,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FKX4SDTGM;
 				INFOPLIST_FILE = KragerChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

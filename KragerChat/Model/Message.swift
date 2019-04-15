@@ -10,8 +10,10 @@ import UIKit
 
 class Message: NSObject {
     var contents: String
+    var didUserSend: Bool
     
-    init(message: String) {
+    init(message: String, didUserSend: Bool) {
         self.contents = message
+        self.didUserSend = didUserSend
     }
 }

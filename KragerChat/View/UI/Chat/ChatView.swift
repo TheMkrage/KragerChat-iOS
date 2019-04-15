@@ -66,10 +66,15 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = viewModel.messages[indexPath.row]
-        
-        let cell = MessageSentCell(style: .default, reuseIdentifier: "sent")
-        cell.messageLabel.text = message.contents
-        return cell
+        if message.didUserSend {
+            let cell = MessageSentCell(style: .default, reuseIdentifier: "sent")
+            cell.messageLabel.text = message.contents
+            return cell
+        } else {
+            let cell = MessageReceivedCell(style: .default, reuseIdentifier: "received")
+            cell.messageLabel.text = message.contents
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
