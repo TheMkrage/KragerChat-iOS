@@ -43,6 +43,7 @@ class MessageCell: UITableViewCell {
     
     private func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
+        
         backgroundColor = .clear
         selectionStyle = .none
         
@@ -71,6 +72,5 @@ class MessageCell: UITableViewCell {
         bottomPadding.isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: bubbleView.leadingAnchor, constant: messagePadding).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -messagePadding).isActive = true
-        
     }
 }

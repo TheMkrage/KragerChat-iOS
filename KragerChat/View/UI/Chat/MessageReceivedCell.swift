@@ -11,6 +11,28 @@ import UIKit
 class MessageReceivedCell: MessageCell {
     override public var bubbleColor: UIColor? { return UIColor.init(named: "receivedMessage") }
     
+    var nameLabel: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.textColor = .white
+        l.font = UIFont(name: "HelveticaNeue-Bold", size: 11.0)
+        return l
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
+        
+    }
+    
     override func updateConstraints() {
         defer {
             super.updateConstraints()
@@ -18,9 +40,14 @@ class MessageReceivedCell: MessageCell {
         guard !didSetConstraints else {
             return
         }
+        
         bubbleView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -45).isActive = true
         bubbleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 45
             ).isActive = true
+        
+        contentView.addSubview(nameLabel)
+        nameLabel.leadingAnchor.constraint(equalTo: messageLabel.leadingAnchor).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: bubbleView.topAnchor, constant: -3).isActive = true
     }
     
     override func draw(_ rect: CGRect) {

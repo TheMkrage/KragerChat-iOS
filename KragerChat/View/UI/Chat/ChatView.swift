@@ -73,6 +73,7 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = MessageReceivedCell(style: .default, reuseIdentifier: "received")
             cell.messageLabel.text = message.contents
+            cell.nameLabel.text = message.sender
             return cell
         }
     }
