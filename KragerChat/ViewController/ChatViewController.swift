@@ -12,6 +12,8 @@ class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
     
+    var messageTextField = MessageTextField()
+    
     lazy var chatView: ChatView = {
         chatViewModel.messages.append(Message(message: "Hey there!", didUserSend: true))
         chatViewModel.messages.append(Message(message: "This is Krager Chat!", didUserSend: false, sender: "Krager"))
@@ -30,10 +32,20 @@ class ChatViewController: UIViewController {
         view.layoutIfNeeded()
     }
     
+    override var inputAccessoryView: UIView? {
+        return messageTextField
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     private func setupConstraints() {
         chatView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         chatView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         chatView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         chatView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
+        messageTextField.heightAnchor.constraint(equalToConstant: 57.0).isActive = true
     }
 }
