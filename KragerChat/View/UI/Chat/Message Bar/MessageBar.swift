@@ -42,11 +42,17 @@ class MessageBar: UIView {
     }
     
     private func initialize() {
-        translatesAutoresizingMaskIntoConstraints = false
+        autoresizingMask = .flexibleHeight
         
         addSubview(quoteButton)
         addSubview(photoButton)
         addSubview(messageTextField)
+    }
+    
+    // override to prevent premade constraints
+    override var intrinsicContentSize: CGSize {
+        let size = CGSize(width: UIScreen.main.bounds.width, height: 57.0)
+        return size
     }
     
     override func updateConstraints() {
@@ -58,17 +64,18 @@ class MessageBar: UIView {
         }
         quoteButton.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
         quoteButton.heightAnchor.constraint(equalToConstant: 21.0).isActive = true
-        quoteButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0).isActive = true
-        quoteButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        quoteButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.0).isActive = true
+        quoteButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor).isActive = true
         
         photoButton.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
         photoButton.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
-        photoButton.leadingAnchor.constraint(equalTo: quoteButton.leadingAnchor, constant: 20.0).isActive = true
-        photoButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        photoButton.leadingAnchor.constraint(equalTo: quoteButton.trailingAnchor, constant: 20.0).isActive = true
+        photoButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor).isActive = true
         
-        //messageTextField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        //messageTextField.leadingAnchor.constraint(equalTo: photoButton.trailingAnchor, constant: 20).isActive = true
-        //messageTextField.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        //messageTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0).isActive = true
+        messageTextField.leadingAnchor.constraint(equalTo: photoButton.trailingAnchor, constant: 20).isActive = true
+        messageTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0).isActive = true
+        
+        topAnchor.constraint(equalTo: messageTextField.topAnchor, constant: -5).isActive = true
+        messageTextField.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: -10).isActive = true
     }
 }

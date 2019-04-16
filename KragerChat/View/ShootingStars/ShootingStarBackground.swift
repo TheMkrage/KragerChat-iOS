@@ -11,7 +11,6 @@ import UIKit
 class ShootingStarBackground: UIView {
     
     var stars = [Star]()
-    var planets = [Planet]()
     
     convenience init() {
         self.init(frame: .zero)
