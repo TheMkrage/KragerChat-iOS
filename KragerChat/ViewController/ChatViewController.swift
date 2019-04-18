@@ -12,7 +12,11 @@ class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
     
-    var messageBar = MessageBar()
+    lazy var messageBar: MessageBar =  {
+        let m = MessageBar()
+        m.delegate = self
+        return m
+    }()
     
     lazy var chatView: ChatView = {
         chatViewModel.messages.append(Message(message: "Hey there!", didUserSend: true))
@@ -32,6 +36,14 @@ class ChatViewController: UIViewController {
         view.layoutIfNeeded()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        subscribeToKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unsubscribeFromKeyboard()
+    }
+    
     override var inputAccessoryView: UIView? {
         return messageBar
     }
@@ -46,4 +58,33 @@ class ChatViewController: UIViewController {
         chatView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         chatView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
+    
+    // MARK: Keyboard Management
+    // Reshape the tableview based on the keyboard's appearance
+    override func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            chatView.tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        }
+    }
+    
+    override func keyboardWillHide(notification: NSNotification) {
+        chatView.tableView.contentInset = .zero
+    }
+}
+
+extension ChatViewController: MessageBarDelegate {
+    func sent(message: String) {
+        chatViewModel.messages.append(Message(message: message, didUserSend: true))
+        chatView.tableView.reloadData()
+    }
+    
+    func quoteButtonTapped() {
+    
+    }
+    
+    func photoButtonTapped() {
+        
+    }
+    
+    
 }

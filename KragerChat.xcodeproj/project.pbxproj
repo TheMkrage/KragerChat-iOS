@@ -17,6 +17,7 @@
 		7E17D7F422645EA9007BF304 /* MessageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7F322645EA9007BF304 /* MessageBar.swift */; };
 		7E17D7F622645FF5007BF304 /* MessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7F522645FF5007BF304 /* MessageTextField.swift */; };
 		7E17D7F822685209007BF304 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7F722685209007BF304 /* SendButton.swift */; };
+		7E17D7FB226918BF007BF304 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7FA226918BF007BF304 /* UIViewController+Extension.swift */; };
 		7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902542230FD5D0054B8F2 /* AppDelegate.swift */; };
 		7E19025A2230FD5D0054B8F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E1902582230FD5D0054B8F2 /* Main.storyboard */; };
 		7E19025C2230FD620054B8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E19025B2230FD620054B8F2 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		7E17D7F322645EA9007BF304 /* MessageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBar.swift; sourceTree = "<group>"; };
 		7E17D7F522645FF5007BF304 /* MessageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextField.swift; sourceTree = "<group>"; };
 		7E17D7F722685209007BF304 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
+		7E17D7FA226918BF007BF304 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		7E1902512230FD5D0054B8F2 /* KragerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KragerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1902542230FD5D0054B8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E1902592230FD5D0054B8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = "Message Bar";
 			sourceTree = "<group>";
 		};
+		7E17D7F9226918B0007BF304 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7E17D7FA226918BF007BF304 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7E1902482230FD5D0054B8F2 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		7E1902532230FD5D0054B8F2 /* KragerChat */ = {
 			isa = PBXGroup;
 			children = (
+				7E17D7F9226918B0007BF304 /* Extensions */,
 				7E17D7EB2261CC62007BF304 /* Model */,
 				7E19027A223100940054B8F2 /* View */,
 				7E190277223100510054B8F2 /* ViewModel */,
@@ -341,6 +352,7 @@
 				7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */,
 				7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */,
 				7E17D7F822685209007BF304 /* SendButton.swift in Sources */,
+				7E17D7FB226918BF007BF304 /* UIViewController+Extension.swift in Sources */,
 				7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */,
 				7E17D7F122641B28007BF304 /* MessageCell.swift in Sources */,
 			);

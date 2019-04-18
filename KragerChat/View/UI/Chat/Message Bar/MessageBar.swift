@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol MessageBarDelegate {
+    func sent(message: String)
+    func quoteButtonTapped()
+    func photoButtonTapped()
+}
+
 class MessageBar: UIView {
     
     var didSetConstraints = false
+    
+    var delegate: MessageBarDelegate?
     
     let quoteButton: UIButton = {
         let b = UIButton()
@@ -44,6 +52,8 @@ class MessageBar: UIView {
     private func initialize() {
         autoresizingMask = .flexibleHeight
         
+        messageTextField.sendButton.addTarget(self, action: #selector(sendTapped(_:)), for: .touchUpInside)
+        
         addSubview(quoteButton)
         addSubview(photoButton)
         addSubview(messageTextField)
@@ -53,6 +63,10 @@ class MessageBar: UIView {
     override var intrinsicContentSize: CGSize {
         let size = CGSize(width: UIScreen.main.bounds.width, height: 57.0)
         return size
+    }
+    
+    @objc func sendTapped(_ sender: UIButton) {
+        delegate?.sent(message: messageTextField.text)
     }
     
     override func updateConstraints() {

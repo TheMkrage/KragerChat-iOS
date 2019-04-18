@@ -27,6 +27,12 @@ class MessageTextField: UIView {
         return s
     }()
     
+    var text: String {
+        get {
+            return field.text
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
         initialize()
