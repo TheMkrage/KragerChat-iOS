@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KragerChat/View/UI/Chat/MessageReceivedCell.swift"
-            timestampString = "577314335.767922"
+            timestampString = "577315504.012583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -47,11 +47,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KragerChat/ViewController/ChatViewController.swift"
-            timestampString = "577314335.768247"
+            timestampString = "577315504.012973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "sent(message:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -63,11 +63,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KragerChat/ViewController/ChatViewController.swift"
-            timestampString = "577314335.7688791"
+            timestampString = "577315504.013616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "sent(message:)"
             landmarkType = "7">
          </BreakpointContent>

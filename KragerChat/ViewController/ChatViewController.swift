@@ -62,7 +62,7 @@ class ChatViewController: UIViewController {
     // MARK: Keyboard Management
     // Reshape the tableview based on the keyboard's appearance
     override func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             chatView.tableView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
         }
     }
@@ -76,6 +76,8 @@ extension ChatViewController: MessageBarDelegate {
     func sent(message: String) {
         chatViewModel.messages.append(Message(message: message, didUserSend: true))
         chatView.tableView.reloadData()
+        chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
+        messageBar.messageTextField.field.text = ""
     }
     
     func quoteButtonTapped() {
