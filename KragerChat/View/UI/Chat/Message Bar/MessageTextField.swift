@@ -21,10 +21,9 @@ class MessageTextField: UIView {
         return f
     }()
     
-    var sendButton: UIButton = {
-        let s = UIButton()
-        s.setImage(UIImage.init(named: "sendButton"), for: .normal)
-        s.translatesAutoresizingMaskIntoConstraints = false
+    var sendButton: SendButton = {
+        let s = SendButton()
+        s.isHidden = true
         return s
     }()
     
@@ -66,45 +65,14 @@ class MessageTextField: UIView {
         sendButton.heightAnchor.constraint(equalToConstant: 26.0).isActive = true
         sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0).isActive = true
     }
-    
-    private func showSendButton() {
-        let pi = Double.pi
-        
-        sendButton.transform = CGAffineTransform(rotationAngle: CGFloat(pi/2.0))
-        sendButton.transform = CGAffineTransform(scaleX: 0.3, y: 1.0)
-        
-        CATransaction.begin()
-        CATransaction.setCompletionBlock {
-            self.sendButton.transform = CGAffineTransform.identity
-        }
-        
-        let spinAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        spinAnimation.timingFunction = CAMediaTimingFunction.init(name: .linear)
-        spinAnimation.duration = 0.25
-        spinAnimation.fromValue = CGFloat(pi)
-        spinAnimation.toValue = 0.0
-        
-        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        scaleAnimation.duration = 0.25
-        scaleAnimation.fromValue = 0.3
-        scaleAnimation.toValue = 1.0
-        
-        sendButton.layer.add(scaleAnimation, forKey: "scale")
-        sendButton.layer.add(spinAnimation, forKey: "spin")
-        CATransaction.commit()
-    }
-    
-    private func hideSendButton() {
-        
-    }
 }
 
 extension MessageTextField: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if textView.text == "" {
-            hideSendButton()
+            sendButton.hide()
         } else {
-            showSendButton()
+            sendButton.show()
         }
     }
 }
