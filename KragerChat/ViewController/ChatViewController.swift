@@ -8,9 +8,14 @@
 
 import UIKit
 
+enum ChatKeyboardState {
+    case none, message, quote, photo
+}
+
 class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
+    var keyboardState: ChatKeyboardState = .none
     
     lazy var messageBar: MessageBar =  {
         let m = MessageBar()
@@ -25,7 +30,17 @@ class ChatViewController: UIViewController {
         let c = ChatView(viewModel: chatViewModel)
         return c
     }()
-
+    
+    let quoteKeyboard: QuoteKeyboard = {
+        let x = QuoteKeyboard()
+        return x
+    }()
+    
+    let photoKeyboard: PhotoKeyboard = {
+        let x = PhotoKeyboard()
+        return x
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,15 +63,26 @@ class ChatViewController: UIViewController {
         return messageBar
     }
     
+    override var inputView: UIView? {
+        switch keyboardState {
+        case .none, .message:
+            return nil
+        case .quote:
+            return quoteKeyboard
+        case .photo:
+            return photoKeyboard
+        }
+    }
+    
     override var canBecomeFirstResponder: Bool {
         return true
     }
     
     private func setupConstraints() {
         chatView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        chatView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         chatView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         chatView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        chatView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
     // MARK: Keyboard Management
@@ -70,6 +96,19 @@ class ChatViewController: UIViewController {
     override func keyboardWillHide(notification: NSNotification) {
         chatView.tableView.contentInset = .zero
     }
+    
+    private func showQuoteKeyboard() {
+        messageBar.resignFirstResponder()
+
+        keyboardState = .quote
+        becomeFirstResponder()
+        reloadInputViews()
+    }
+    
+    private func showPhotoKeyboard() {
+        keyboardState = .photo
+        reloadInputViews()
+    }
 }
 
 extension ChatViewController: MessageBarDelegate {
@@ -81,12 +120,10 @@ extension ChatViewController: MessageBarDelegate {
     }
     
     func quoteButtonTapped() {
-    
+        showQuoteKeyboard()
     }
     
     func photoButtonTapped() {
-        
+        showPhotoKeyboard()
     }
-    
-    
 }

@@ -29,6 +29,10 @@
 		7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E19027D223102AC0054B8F2 /* EarthView.swift */; };
 		7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */; };
 		7E1902862231BD770054B8F2 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902852231BD770054B8F2 /* Star.swift */; };
+		7E2E76E9226D77FA007172ED /* QuoteKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */; };
+		7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EA226D78E4007172ED /* QuoteCell.swift */; };
+		7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */; };
+		7E2E76F1226D8D95007172ED /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76F0226D8D95007172ED /* Keyboard.swift */; };
 		7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3ED11C223390DD00080C23 /* MoonView.swift */; };
 		7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65E7F32255F33200192F98 /* KragerButton.swift */; };
 		7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65E7F52256A80100192F98 /* UIView+Extensions.swift */; };
@@ -71,6 +75,10 @@
 		7E19027D223102AC0054B8F2 /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingStarBackground.swift; sourceTree = "<group>"; };
 		7E1902852231BD770054B8F2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteKeyboard.swift; sourceTree = "<group>"; };
+		7E2E76EA226D78E4007172ED /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeyboard.swift; sourceTree = "<group>"; };
+		7E2E76F0226D8D95007172ED /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7E3ED11C223390DD00080C23 /* MoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
 		7E65E7F32255F33200192F98 /* KragerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerButton.swift; sourceTree = "<group>"; };
 		7E65E7F52256A80100192F98 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 		7E17D7E42261BB3C007BF304 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				7E2E76E7226D77E6007172ED /* Keyboards */,
 				7E17D7F222645E9B007BF304 /* Message Bar */,
 				7E17D7E52261BB56007BF304 /* ChatView.swift */,
 				7E17D7EE22641B19007BF304 /* MessageReceivedCell.swift */,
@@ -222,6 +231,33 @@
 			path = ShootingStars;
 			sourceTree = "<group>";
 		};
+		7E2E76E7226D77E6007172ED /* Keyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7E2E76ED226D7C7F007172ED /* Photo */,
+				7E2E76EC226D7C79007172ED /* Quote */,
+				7E2E76F0226D8D95007172ED /* Keyboard.swift */,
+			);
+			path = Keyboards;
+			sourceTree = "<group>";
+		};
+		7E2E76EC226D7C79007172ED /* Quote */ = {
+			isa = PBXGroup;
+			children = (
+				7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */,
+				7E2E76EA226D78E4007172ED /* QuoteCell.swift */,
+			);
+			path = Quote;
+			sourceTree = "<group>";
+		};
+		7E2E76ED226D7C7F007172ED /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		7E65E7F22255F32800192F98 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +379,8 @@
 				7E17D7F622645FF5007BF304 /* MessageTextField.swift in Sources */,
 				7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */,
 				7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */,
+				7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */,
+				7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */,
 				7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */,
 				7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */,
 				7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */,
@@ -353,6 +391,8 @@
 				7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */,
 				7E17D7F822685209007BF304 /* SendButton.swift in Sources */,
 				7E17D7FB226918BF007BF304 /* UIViewController+Extension.swift in Sources */,
+				7E2E76E9226D77FA007172ED /* QuoteKeyboard.swift in Sources */,
+				7E2E76F1226D8D95007172ED /* Keyboard.swift in Sources */,
 				7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */,
 				7E17D7F122641B28007BF304 /* MessageCell.swift in Sources */,
 			);

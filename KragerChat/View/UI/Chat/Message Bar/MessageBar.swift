@@ -20,17 +20,19 @@ class MessageBar: UIView {
     
     var delegate: MessageBarDelegate?
     
-    let quoteButton: UIButton = {
+    lazy var quoteButton: UIButton = {
         let b = UIButton()
         b.translatesAutoresizingMaskIntoConstraints = false
         b.setImage(UIImage(named: "quote"), for: .normal)
+        b.addTarget(self, action: #selector(quoteTapped), for: .touchUpInside)
         return b
     }()
     
-    let photoButton: UIButton = {
+    lazy var  photoButton: UIButton = {
         let b = UIButton()
         b.translatesAutoresizingMaskIntoConstraints = false
         b.setImage(UIImage(named: "photo"), for: .normal)
+        b.addTarget(self, action: #selector(photoTapped), for: .touchUpInside)
         return b
     }()
     
@@ -38,6 +40,7 @@ class MessageBar: UIView {
         let m = MessageTextField()
         return m
     }()
+    var bottomConstraint: NSLayoutConstraint!
 
     init() {
         super.init(frame: .zero)
@@ -65,8 +68,21 @@ class MessageBar: UIView {
         return size
     }
     
+    override func resignFirstResponder() -> Bool {
+        messageTextField.field.resignFirstResponder()
+        return super.resignFirstResponder()
+    }
+    
     @objc func sendTapped(_ sender: UIButton) {
         delegate?.sent(message: messageTextField.text)
+    }
+    
+    @objc func quoteTapped() {
+        delegate?.quoteButtonTapped()
+    }
+    
+    @objc func photoTapped() {
+        delegate?.photoButtonTapped()
     }
     
     override func updateConstraints() {
@@ -90,6 +106,7 @@ class MessageBar: UIView {
         messageTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0).isActive = true
         
         topAnchor.constraint(equalTo: messageTextField.topAnchor, constant: -5).isActive = true
-        messageTextField.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: -10).isActive = true
+        bottomConstraint = messageTextField.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor, constant: -10)
+        bottomConstraint.isActive = true
     }
 }
