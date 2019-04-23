@@ -102,15 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E17D7E42261BB3C007BF304 /* Chat */ = {
+		7E04E52B226EDCFF00113064 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				7E2E76E7226D77E6007172ED /* Keyboards */,
-				7E17D7F222645E9B007BF304 /* Message Bar */,
-				7E17D7E52261BB56007BF304 /* ChatView.swift */,
 				7E17D7EE22641B19007BF304 /* MessageReceivedCell.swift */,
 				7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */,
 				7E17D7F022641B28007BF304 /* MessageCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		7E17D7E42261BB3C007BF304 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7E04E52B226EDCFF00113064 /* TableCells */,
+				7E2E76E7226D77E6007172ED /* Keyboards */,
+				7E17D7F222645E9B007BF304 /* Message Bar */,
+				7E17D7E52261BB56007BF304 /* ChatView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";

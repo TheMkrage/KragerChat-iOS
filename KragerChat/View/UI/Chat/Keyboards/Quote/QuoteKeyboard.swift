@@ -23,10 +23,15 @@ protocol QuoteKeyboardDelegate: class {
 
 class QuoteKeyboard: Keyboard {
 
-    var collectionView: UICollectionView = {
-        let layout = UICollectionViewLayout()
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = CGSize(width: 1, height: 1)
         let c = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        c.backgroundColor = .clear
+        c.dataSource = self
+        c.delegate = self
         c.translatesAutoresizingMaskIntoConstraints = false
+        c.register(QuoteCell.self, forCellWithReuseIdentifier: "quote")
         return c
     }()
     
@@ -46,8 +51,8 @@ class QuoteKeyboard: Keyboard {
     
     private func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .red
-        
+        backgroundColor = UIColor.init(named: "bg")
+        collectionView.reloadData()
         addSubview(collectionView)
     }
     
@@ -69,12 +74,15 @@ class QuoteKeyboard: Keyboard {
 
 extension QuoteKeyboard: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(Quotes.all.count)
         return Quotes.all.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let quote = Quotes.all[indexPath.row]
-        let cell = QuoteCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "quote", for: indexPath) as? QuoteCell else {
+            return UICollectionViewCell()
+        }
         
         return cell
     }
