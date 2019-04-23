@@ -8,9 +8,14 @@
 
 import UIKit
 
+enum KeyboardState {
+    case none, message, quote, photo
+}
+
 class MessageTextField: UIView {
     
     var didSetConstraints = false
+    var keyboardState: KeyboardState = .none
 
     lazy var field: UITextView = {
         let f = UITextView()
@@ -19,6 +24,16 @@ class MessageTextField: UIView {
         f.isScrollEnabled = false
         f.delegate = self
         return f
+    }()
+    
+    let quoteKeyboard: QuoteKeyboard = {
+        let x = QuoteKeyboard()
+        return x
+    }()
+    
+    let photoKeyboard: PhotoKeyboard = {
+        let x = PhotoKeyboard()
+        return x
     }()
     
     var sendButton: SendButton = {
@@ -70,6 +85,16 @@ class MessageTextField: UIView {
         sendButton.widthAnchor.constraint(equalToConstant: 26.0).isActive = true
         sendButton.heightAnchor.constraint(equalToConstant: 26.0).isActive = true
         sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0).isActive = true
+    }
+    
+    func showQuoteKeyboard() {
+        field.inputView = quoteKeyboard
+        field.reloadInputViews()
+    }
+    
+    func showPhotoKeyboard() {
+        field.inputView = photoKeyboard
+        field.reloadInputViews()
     }
 }
 

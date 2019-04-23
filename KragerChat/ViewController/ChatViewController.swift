@@ -8,14 +8,9 @@
 
 import UIKit
 
-enum ChatKeyboardState {
-    case none, message, quote, photo
-}
-
 class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
-    var keyboardState: ChatKeyboardState = .none
     
     lazy var messageBar: MessageBar =  {
         let m = MessageBar()
@@ -29,16 +24,6 @@ class ChatViewController: UIViewController {
         chatViewModel.messages.append(Message(message: "OMG! This app is so cool and way better than Ishaan Chat, Why? Because Ishaan chat doesnt and will never exist", didUserSend: true))
         let c = ChatView(viewModel: chatViewModel)
         return c
-    }()
-    
-    let quoteKeyboard: QuoteKeyboard = {
-        let x = QuoteKeyboard()
-        return x
-    }()
-    
-    let photoKeyboard: PhotoKeyboard = {
-        let x = PhotoKeyboard()
-        return x
     }()
     
     override func viewDidLoad() {
@@ -63,17 +48,6 @@ class ChatViewController: UIViewController {
         return messageBar
     }
     
-    override var inputView: UIView? {
-        switch keyboardState {
-        case .none, .message:
-            return nil
-        case .quote:
-            return quoteKeyboard
-        case .photo:
-            return photoKeyboard
-        }
-    }
-    
     override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -96,19 +70,6 @@ class ChatViewController: UIViewController {
     override func keyboardWillHide(notification: NSNotification) {
         chatView.tableView.contentInset = .zero
     }
-    
-    private func showQuoteKeyboard() {
-        messageBar.resignFirstResponder()
-
-        keyboardState = .quote
-        becomeFirstResponder()
-        reloadInputViews()
-    }
-    
-    private func showPhotoKeyboard() {
-        keyboardState = .photo
-        reloadInputViews()
-    }
 }
 
 extension ChatViewController: MessageBarDelegate {
@@ -117,13 +78,5 @@ extension ChatViewController: MessageBarDelegate {
         chatView.tableView.reloadData()
         chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
         messageBar.messageTextField.field.text = ""
-    }
-    
-    func quoteButtonTapped() {
-        showQuoteKeyboard()
-    }
-    
-    func photoButtonTapped() {
-        showPhotoKeyboard()
     }
 }

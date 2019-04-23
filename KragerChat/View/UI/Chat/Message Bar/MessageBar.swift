@@ -10,8 +10,6 @@ import UIKit
 
 protocol MessageBarDelegate {
     func sent(message: String)
-    func quoteButtonTapped()
-    func photoButtonTapped()
 }
 
 class MessageBar: UIView {
@@ -78,11 +76,11 @@ class MessageBar: UIView {
     }
     
     @objc func quoteTapped() {
-        delegate?.quoteButtonTapped()
+        messageTextField.showQuoteKeyboard()
     }
     
     @objc func photoTapped() {
-        delegate?.photoButtonTapped()
+        messageTextField.showPhotoKeyboard()
     }
     
     override func updateConstraints() {
