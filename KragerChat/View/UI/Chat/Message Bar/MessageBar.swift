@@ -76,7 +76,7 @@ class MessageBar: UIView {
     }
     
     @objc func quoteTapped() {
-        messageTextField.showQuoteKeyboard()
+        messageTextField.quoteButtonPressed()
     }
     
     @objc func photoTapped() {

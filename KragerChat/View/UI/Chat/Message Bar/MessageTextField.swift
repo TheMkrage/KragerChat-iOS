@@ -15,7 +15,28 @@ enum KeyboardState {
 class MessageTextField: UIView {
     
     var didSetConstraints = false
-    var keyboardState: KeyboardState = .none
+    var keyboardState: KeyboardState = .none {
+        didSet {
+            
+            switch keyboardState {
+            case .message, .none:
+                field.inputView = nil
+            case .photo:
+                field.inputView = photoKeyboard
+            case .quote:
+                field.inputView = quoteKeyboard
+            }
+            field.reloadInputViews()
+            field.becomeFirstResponder()
+            
+            // update the cursor
+            if keyboardState == .none {
+                field.tintColor = UIColor(named: "sentMessage")
+            } else {
+                field.tintColor = .clear
+            }
+        }
+    }
 
     lazy var field: UITextView = {
         let f = UITextView()
@@ -88,14 +109,20 @@ class MessageTextField: UIView {
         sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0).isActive = true
     }
     
-    func showQuoteKeyboard() {
-        field.inputView = quoteKeyboard
-        field.reloadInputViews()
+    func quoteButtonPressed() {
+        if keyboardState != .quote {
+            keyboardState = .quote
+        } else {
+            keyboardState = .message
+        }
     }
     
     func showPhotoKeyboard() {
-        field.inputView = photoKeyboard
-        field.reloadInputViews()
+        if keyboardState != .photo {
+            keyboardState = .photo
+        } else {
+            keyboardState = .message
+        }
     }
 }
 

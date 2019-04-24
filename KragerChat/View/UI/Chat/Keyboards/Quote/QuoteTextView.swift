@@ -25,6 +25,7 @@ class QuoteTextView: UITextView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
         
+        font = UIFont(name: "HelveticaNeue-Medium", size: 14.0)
         textAlignment = .center
         isUserInteractionEnabled = false
         isScrollEnabled = false
