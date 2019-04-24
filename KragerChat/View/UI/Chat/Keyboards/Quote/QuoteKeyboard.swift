@@ -10,10 +10,10 @@ import UIKit
 
 class Quotes {
     static let all = [
-        "I'm Krager",
-        "Hoch or Pitzer?",
-        "WTF are you doing!?",
-        "Whats for dinner?",
+        "\"I'm Krager\"\n - Matthew Krager",
+        "\"Hoch or Pitzer?\"\n - Matthew Krager",
+        "\"WTF are you doing!?\"\n - Matthew Krager",
+        "\"What's for dinner?\"\n - Matthew Krager",
     ]
 }
 
@@ -25,7 +25,6 @@ class QuoteKeyboard: Keyboard {
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: 1, height: 1)
         let c = UICollectionView(frame: .zero, collectionViewLayout: layout)
         c.backgroundColor = .clear
         c.dataSource = self
@@ -72,9 +71,19 @@ class QuoteKeyboard: Keyboard {
     }
 }
 
-extension QuoteKeyboard: UICollectionViewDelegate, UICollectionViewDataSource {
+extension QuoteKeyboard: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let quote = Quotes.all[indexPath.row]
+        let width = UIScreen.main.bounds.width * 0.4
+        
+        let textView = QuoteTextView()
+        textView.text = quote
+        let textSize = textView.sizeThatFits(CGSize(width: width - (QuoteCell.padding * 2.0), height: CGFloat.greatestFiniteMagnitude))
+        return CGSize(width: width, height: textSize.height + (QuoteCell.padding * 2.0))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(Quotes.all.count)
         return Quotes.all.count
     }
     
@@ -83,9 +92,13 @@ extension QuoteKeyboard: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "quote", for: indexPath) as? QuoteCell else {
             return UICollectionViewCell()
         }
+        cell.quoteTextView.text = quote
         
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let quote = Quotes.all[indexPath.row]
+        delegate?.selected(quote: quote)
+    }
 }

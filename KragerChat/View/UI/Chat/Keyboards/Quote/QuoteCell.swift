@@ -10,16 +10,9 @@ import UIKit
 
 class QuoteCell: UICollectionViewCell {
     var didSetConstraints = false
-    public var bubbleColor: UIColor? { return .yellow }
     
-    var quoteLabel: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.textColor = .white
-        l.numberOfLines = 0
-        l.lineBreakMode = .byWordWrapping
-        l.setContentCompressionResistancePriority(.required, for: .vertical)
-        l.text = "This is a cool message lol"
+    var quoteTextView: QuoteTextView = {
+        let l = QuoteTextView()
         return l
     }()
     
@@ -35,15 +28,16 @@ class QuoteCell: UICollectionViewCell {
     
     private func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
-        
+        contentView.autoresizingMask = [.flexibleHeight]
         backgroundColor = .clear
         
-        contentView.addSubview(quoteLabel)
+        contentView.addSubview(quoteTextView)
         
         setNeedsUpdateConstraints()
         updateConstraintsIfNeeded()
     }
     
+    static let padding: CGFloat = 7.5
     override func updateConstraints() {
         defer {
             super.updateConstraints()
@@ -53,13 +47,16 @@ class QuoteCell: UICollectionViewCell {
         }
         didSetConstraints = true
         
-        widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.4).isActive = true
+        contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.4).isActive = true
+        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: QuoteCell.padding * 2.0).isActive = true
         
-        
-        let padding: CGFloat = 7.5
-        quoteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding).isActive = true
-        quoteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding).isActive = true
-        quoteLabel.topAnchor.constraint(equalTo: topAnchor, constant: padding).isActive = true
-        quoteLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding).isActive = true
+        quoteTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuoteCell.padding).isActive = true
+        let trailingPaddingConstraint = quoteTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -QuoteCell.padding)
+        trailingPaddingConstraint.priority = UILayoutPriority(rawValue: 999)
+        trailingPaddingConstraint.isActive = true
+        quoteTextView.topAnchor.constraint(equalTo: topAnchor, constant: QuoteCell.padding).isActive = true
+        let bottomPaddingConstraint = quoteTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -QuoteCell.padding)
+        bottomPaddingConstraint.priority = UILayoutPriority(rawValue: 999)
+        bottomPaddingConstraint.isActive = true
     }
 }

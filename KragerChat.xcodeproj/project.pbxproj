@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E04E52D22702CF300113064 /* QuoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E04E52C22702CF300113064 /* QuoteTextView.swift */; };
 		7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E22261B979007BF304 /* ChatViewController.swift */; };
 		7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E52261BB56007BF304 /* ChatView.swift */; };
 		7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E04E52C22702CF300113064 /* QuoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTextView.swift; sourceTree = "<group>"; };
 		7E17D7E22261B979007BF304 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7E17D7E52261BB56007BF304 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		7E17D7E72261BC7C007BF304 /* MessageSentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSentCell.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */,
 				7E2E76EA226D78E4007172ED /* QuoteCell.swift */,
+				7E04E52C22702CF300113064 /* QuoteTextView.swift */,
 			);
 			path = Quote;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */,
 				7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */,
 				7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */,
+				7E04E52D22702CF300113064 /* QuoteTextView.swift in Sources */,
 				7E17D7F422645EA9007BF304 /* MessageBar.swift in Sources */,
 				7E190279223100910054B8F2 /* KragerTextFieldViewModel.swift in Sources */,
 				7E190275223100260054B8F2 /* HomeViewController.swift in Sources */,

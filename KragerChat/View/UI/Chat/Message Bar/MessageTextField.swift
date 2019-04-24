@@ -26,8 +26,9 @@ class MessageTextField: UIView {
         return f
     }()
     
-    let quoteKeyboard: QuoteKeyboard = {
+    lazy var quoteKeyboard: QuoteKeyboard = {
         let x = QuoteKeyboard()
+        x.delegate = self
         return x
     }()
     
@@ -105,5 +106,12 @@ extension MessageTextField: UITextViewDelegate {
         } else {
             sendButton.show()
         }
+    }
+}
+
+extension MessageTextField: QuoteKeyboardDelegate {
+    func selected(quote: String) {
+        field.text = quote
+        sendButton.show()
     }
 }
