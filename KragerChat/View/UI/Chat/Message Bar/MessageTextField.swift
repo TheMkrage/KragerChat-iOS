@@ -17,7 +17,10 @@ class MessageTextField: UIView {
     var didSetConstraints = false
     var keyboardState: KeyboardState = .none {
         didSet {
-            
+            // don't refresh if keyboardState did not change
+            if keyboardState == oldValue {
+                return
+            }
             switch keyboardState {
             case .message, .none:
                 field.inputView = nil
@@ -26,12 +29,13 @@ class MessageTextField: UIView {
             case .quote:
                 field.inputView = quoteKeyboard
             }
+            field.resignFirstResponder()
             field.reloadInputViews()
             field.becomeFirstResponder()
             
             // update the cursor
-            if keyboardState == .none {
-                field.tintColor = UIColor(named: "sentMessage")
+            if keyboardState == .none || keyboardState == .message {
+                field.tintColor = UIColor(named: "sentMessage")!
             } else {
                 field.tintColor = .clear
             }
@@ -44,6 +48,8 @@ class MessageTextField: UIView {
         f.font = UIFont(name: "HelveticaNeue", size: 15.0)
         f.isScrollEnabled = false
         f.delegate = self
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(fieldTapped))
+        f.addGestureRecognizer(tapRecognizer)
         return f
     }()
     
@@ -107,6 +113,10 @@ class MessageTextField: UIView {
         sendButton.widthAnchor.constraint(equalToConstant: 26.0).isActive = true
         sendButton.heightAnchor.constraint(equalToConstant: 26.0).isActive = true
         sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0).isActive = true
+    }
+    
+    @objc private func fieldTapped() {
+        keyboardState = .message
     }
     
     func quoteButtonPressed() {

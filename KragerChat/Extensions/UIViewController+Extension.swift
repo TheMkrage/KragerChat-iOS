@@ -9,12 +9,8 @@
 import UIKit
 
 extension UIViewController {
-    @objc func keyboardWillShow(notification: NSNotification) {
-       
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-    }
+    @objc func keyboardWillShow(notification: NSNotification) { }
+    @objc func keyboardWillHide(notification: NSNotification) { }
     
     func subscribeToKeyboard() {
         let notificationCenter = NotificationCenter.default
