@@ -37,6 +37,8 @@
 		7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3ED11C223390DD00080C23 /* MoonView.swift */; };
 		7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65E7F32255F33200192F98 /* KragerButton.swift */; };
 		7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65E7F52256A80100192F98 /* UIView+Extensions.swift */; };
+		7EEA35A3227EAA45000A4585 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEA35A2227EAA45000A4585 /* PhotoCell.swift */; };
+		7EEA35A5227EAE67000A4585 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEA35A4227EAE67000A4585 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		7E3ED11C223390DD00080C23 /* MoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonView.swift; sourceTree = "<group>"; };
 		7E65E7F32255F33200192F98 /* KragerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerButton.swift; sourceTree = "<group>"; };
 		7E65E7F52256A80100192F98 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7EEA35A2227EAA45000A4585 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		7EEA35A4227EAE67000A4585 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		7E17D7EB2261CC62007BF304 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7EEA35A4227EAE67000A4585 /* Photo.swift */,
 				7E17D7EC2261CC6B007BF304 /* Message.swift */,
 			);
 			path = Model;
@@ -265,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */,
+				7EEA35A2227EAA45000A4585 /* PhotoCell.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEA35A5227EAE67000A4585 /* Photo.swift in Sources */,
 				7E1902552230FD5D0054B8F2 /* AppDelegate.swift in Sources */,
 				7E17D7EF22641B19007BF304 /* MessageReceivedCell.swift in Sources */,
 				7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */,
@@ -391,6 +398,7 @@
 				7E17D7E82261BC7C007BF304 /* MessageSentCell.swift in Sources */,
 				7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */,
 				7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */,
+				7EEA35A3227EAA45000A4585 /* PhotoCell.swift in Sources */,
 				7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */,
 				7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */,
 				7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */,

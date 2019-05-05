@@ -14,6 +14,9 @@ class Quotes {
         "\"Hoch or Pitzer?\"\n - Matthew Krager",
         "\"WTF are you doing!?\"\n - Matthew Krager",
         "\"What's for dinner?\"\n - Matthew Krager",
+        "\"This burger is delicious\"\n - Matthew Krager",
+        "\"Swift is a great language\"\n - Matthew Krager",
+        "\"You know what I don't understand\"\n - Matthew Krager",
     ]
 }
 
