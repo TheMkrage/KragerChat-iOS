@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MessageBarDelegate {
-    func sent(message: String)
+    func sent(message: String, photo: Photo?)
 }
 
 class MessageBar: UIView {
@@ -72,7 +72,7 @@ class MessageBar: UIView {
     }
     
     @objc func sendTapped(_ sender: UIButton) {
-        delegate?.sent(message: messageTextField.text)
+        delegate?.sent(message: messageTextField.text, photo: messageTextField.selectedPhoto)
     }
     
     @objc func quoteTapped() {

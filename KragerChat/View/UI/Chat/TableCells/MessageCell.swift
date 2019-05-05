@@ -27,8 +27,14 @@ class MessageCell: UITableViewCell {
         l.translatesAutoresizingMaskIntoConstraints = false
         l.textColor = .white
         l.numberOfLines = 0
-        l.text = "This is a cool message lol"
         return l
+    }()
+    
+    var photoView: UIImageView = {
+        let i = UIImageView()
+        i.translatesAutoresizingMaskIntoConstraints = false
+        i.contentMode = .scaleAspectFill
+        return i
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,6 +55,7 @@ class MessageCell: UITableViewCell {
         
         contentView.addSubview(bubbleView)
         bubbleView.addSubview(messageLabel)
+        bubbleView.addSubview(photoView)
         
         setNeedsUpdateConstraints()
         updateConstraintsIfNeeded()
@@ -72,5 +79,12 @@ class MessageCell: UITableViewCell {
         bottomPadding.isActive = true
         messageLabel.leadingAnchor.constraint(equalTo: bubbleView.leadingAnchor, constant: messagePadding).isActive = true
         messageLabel.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -messagePadding).isActive = true
+        
+        photoView.topAnchor.constraint(equalTo: bubbleView.topAnchor, constant: messagePadding).isActive = true
+        let bottomPhotoPadding = photoView.bottomAnchor.constraint(equalTo: bubbleView.bottomAnchor, constant: -messagePadding)
+        bottomPhotoPadding.priority = .init(rawValue: 999)
+        bottomPhotoPadding.isActive = true
+        photoView.leadingAnchor.constraint(equalTo: bubbleView.leadingAnchor, constant: messagePadding).isActive = true
+        photoView.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -messagePadding).isActive = true
     }
 }

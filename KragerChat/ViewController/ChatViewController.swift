@@ -73,10 +73,20 @@ class ChatViewController: UIViewController {
 }
 
 extension ChatViewController: MessageBarDelegate {
-    func sent(message: String) {
-        chatViewModel.messages.append(Message(message: message, didUserSend: true))
-        chatView.tableView.reloadData()
-        chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
-        messageBar.messageTextField.field.text = ""
+    func sent(message: String, photo: Photo?) {
+        // send photo if it exists
+        if let photo = photo {
+            chatViewModel.messages.append(Message(photo: photo, didUserSend: true))
+            chatView.tableView.reloadData()
+            chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
+            messageBar.messageTextField.field.text = ""
+        }
+        // send message if it exists
+        if message != "" {
+            chatViewModel.messages.append(Message(message: message, didUserSend: true))
+            chatView.tableView.reloadData()
+            chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
+            messageBar.messageTextField.field.text = ""
+        }
     }
 }

@@ -41,6 +41,7 @@ class MessageTextField: UIView {
             }
         }
     }
+    var selectedPhoto: Photo?
 
     lazy var field: UITextView = {
         let f = UITextView()
@@ -169,6 +170,7 @@ extension MessageTextField: PhotoKeyboardDelegate {
         
         let attrStringWithImage = NSAttributedString(attachment: attachment)
         field.attributedText = attrStringWithImage
+        selectedPhoto = photo
         sendButton.show()
     }
 }

@@ -69,10 +69,12 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
         if message.didUserSend {
             let cell = MessageSentCell(style: .default, reuseIdentifier: "sent")
             cell.messageLabel.text = message.contents
+            cell.photoView.image = message.photo?.image
             return cell
         } else {
             let cell = MessageReceivedCell(style: .default, reuseIdentifier: "received")
             cell.messageLabel.text = message.contents
+            cell.photoView.image = message.photo?.image
             cell.nameLabel.text = message.sender
             return cell
         }
