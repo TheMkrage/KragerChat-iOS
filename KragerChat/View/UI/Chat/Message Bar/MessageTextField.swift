@@ -59,8 +59,9 @@ class MessageTextField: UIView {
         return x
     }()
     
-    let photoKeyboard: PhotoKeyboard = {
+    lazy var photoKeyboard: PhotoKeyboard = {
         let x = PhotoKeyboard()
+        x.delegate = self
         return x
     }()
     
@@ -149,6 +150,25 @@ extension MessageTextField: UITextViewDelegate {
 extension MessageTextField: QuoteKeyboardDelegate {
     func selected(quote: String) {
         field.text = quote
+        sendButton.show()
+    }
+}
+
+extension MessageTextField: PhotoKeyboardDelegate {
+    func selected(photo: Photo) {
+        let attachment = NSTextAttachment()
+        attachment.image = photo.image
+        
+        // scale the photo
+        let oldWidth = attachment.image!.size.width;
+        let scaleFactor = oldWidth / (field.frame.size.width - 10)
+        guard let cgImage = attachment.image!.cgImage else {
+            return
+        }
+        attachment.image = UIImage(cgImage: cgImage, scale: scaleFactor, orientation: .up)
+        
+        let attrStringWithImage = NSAttributedString(attachment: attachment)
+        field.attributedText = attrStringWithImage
         sendButton.show()
     }
 }
