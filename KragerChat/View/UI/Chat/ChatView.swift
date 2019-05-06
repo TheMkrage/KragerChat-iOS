@@ -76,6 +76,8 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
             cell.messageLabel.text = message.contents
             cell.photoView.image = message.photo?.image
             cell.nameLabel.text = message.sender
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
             return cell
         }
     }
@@ -85,6 +87,6 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 400
     }
 }
