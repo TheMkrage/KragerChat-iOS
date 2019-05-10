@@ -74,6 +74,7 @@ class MessageBar: UIView {
     @objc func sendTapped(_ sender: UIButton) {
         let noAttributes = messageTextField.text.replacingOccurrences(of: "\u{fffc}", with: "", options: NSString.CompareOptions.literal, range:nil)
         delegate?.sent(message: noAttributes, photo: messageTextField.selectedPhoto)
+        messageTextField.sendButton.hide()
     }
     
     @objc func quoteTapped() {
