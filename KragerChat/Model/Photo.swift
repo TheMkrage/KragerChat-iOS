@@ -19,7 +19,7 @@ class Photos: NSObject {
     }
 }
 
-class Photo: NSObject {
+class Photo: NSObject, Codable {
     var name: String
     var id: Int
     var image: UIImage {

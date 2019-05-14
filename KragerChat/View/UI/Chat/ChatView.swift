@@ -66,7 +66,7 @@ extension ChatView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = viewModel.messages[indexPath.row]
-        if message.didUserSend {
+        if message.didUserSend ?? false {
             let cell = MessageSentCell(style: .default, reuseIdentifier: "sent")
             cell.messageLabel.text = message.contents
             cell.photoView.image = message.photo?.image

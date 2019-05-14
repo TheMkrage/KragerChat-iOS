@@ -28,7 +28,19 @@ class ChatClient: NSObject {
         webSocket.disconnect(forceTimeout: 0)
         webSocket.delegate = nil
     }
-
+    
+    func send(message: Message) {
+        do {
+            let jsonData = try JSONEncoder().encode(message)
+            guard let jsonString = String(data: jsonData, encoding: .utf8) else {
+                return
+            }
+            print(jsonString)
+            webSocket.write(string: jsonString)
+        } catch {
+            print("error encoding")
+        }
+    }
 }
 
 extension ChatClient: WebSocketDelegate {
@@ -42,9 +54,19 @@ extension ChatClient: WebSocketDelegate {
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print(text)
+        guard let jsonData = text.data(using: .utf8) else {
+            return
+        }
+        do {
+            let message = try JSONDecoder().decode(Message.self, from: jsonData)
+            delegate?.received(message: message)
+        } catch let jsonError {
+            print(jsonError)
+            print("could not receive message")
+        }
     }
     
     func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-        print(data)
+        
     }
 }

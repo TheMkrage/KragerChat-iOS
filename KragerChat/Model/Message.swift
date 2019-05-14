@@ -8,10 +8,10 @@
 
 import UIKit
 
-class Message: NSObject {
+class Message: NSObject, Codable {
     var contents: String
     var photo: Photo?
-    var didUserSend: Bool
+    var didUserSend: Bool? = false
     var sender: String
     
     init(message: String = "", photo: Photo? = nil, didUserSend: Bool, sender: String = "") {

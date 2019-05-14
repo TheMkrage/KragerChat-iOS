@@ -11,7 +11,12 @@ import UIKit
 class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
-    var client = ChatClient()
+    
+    lazy var client: ChatClient = {
+        let c = ChatClient()
+        c.delegate = self
+        return c
+    }()
     
     lazy var messageBar: MessageBar =  {
         let m = MessageBar()
@@ -75,17 +80,32 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: MessageBarDelegate {
     func sent(message: String, photo: Photo?) {
+        // if photo exists, send it first in separate message
         // send photo if it exists
         if let photo = photo {
-            chatViewModel.messages.append(Message(photo: photo, didUserSend: true))
+            let m = Message(photo: photo, didUserSend: true)
+            chatViewModel.messages.append(m)
+            client.send(message: m)
         }
         // send message if it exists
         if message != "" {
-            chatViewModel.messages.append(Message(message: message, didUserSend: true))
+            let m = Message(message: message, didUserSend: true)
+            chatViewModel.messages.append(m)
+            client.send(message: m)
         }
         chatView.tableView.reloadData()
         chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
         messageBar.messageTextField.field.text = ""
         messageBar.messageTextField.selectedPhoto = nil
+        
+    }
+}
+
+extension ChatViewController: ChatClientDelegate {
+    func received(message: Message) {
+        message.didUserSend = false
+        chatViewModel.messages.append(message)
+        chatView.tableView.reloadData()
+        chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
     }
 }
