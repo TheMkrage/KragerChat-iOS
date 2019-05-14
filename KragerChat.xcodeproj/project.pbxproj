@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39C571EE3030DBED9818E6E2 /* Pods_KragerChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8AF9A32C0E1381E499B5819 /* Pods_KragerChat.framework */; };
 		7E04E52D22702CF300113064 /* QuoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E04E52C22702CF300113064 /* QuoteTextView.swift */; };
 		7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E22261B979007BF304 /* ChatViewController.swift */; };
 		7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E17D7E52261BB56007BF304 /* ChatView.swift */; };
@@ -40,6 +41,7 @@
 		7ED527BC228A7693009F1393 /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED527BB228A7693009F1393 /* ChatClient.swift */; };
 		7EEA35A3227EAA45000A4585 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEA35A2227EAA45000A4585 /* PhotoCell.swift */; };
 		7EEA35A5227EAE67000A4585 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEA35A4227EAE67000A4585 /* Photo.swift */; };
+		8265169EA88048E0C8F9F382 /* Pods_KragerChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54B71C95B261178BFEFA9E72 /* Pods_KragerChatTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33703C123AA42ACDA0B360E9 /* Pods-KragerChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KragerChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KragerChatTests/Pods-KragerChatTests.release.xcconfig"; sourceTree = "<group>"; };
+		3946E1AD666F9EEA64F6E42C /* Pods-KragerChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KragerChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-KragerChat/Pods-KragerChat.release.xcconfig"; sourceTree = "<group>"; };
+		54B71C95B261178BFEFA9E72 /* Pods_KragerChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KragerChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E04E52C22702CF300113064 /* QuoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTextView.swift; sourceTree = "<group>"; };
 		7E17D7E22261B979007BF304 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7E17D7E52261BB56007BF304 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -90,6 +95,9 @@
 		7ED527BB228A7693009F1393 /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		7EEA35A2227EAA45000A4585 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		7EEA35A4227EAE67000A4585 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9434B5DE95D00AE3C0B64747 /* Pods-KragerChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KragerChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KragerChat/Pods-KragerChat.debug.xcconfig"; sourceTree = "<group>"; };
+		D99C9ACBEB67F113C0CB16AC /* Pods-KragerChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KragerChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KragerChatTests/Pods-KragerChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8AF9A32C0E1381E499B5819 /* Pods_KragerChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KragerChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C571EE3030DBED9818E6E2 /* Pods_KragerChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +113,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8265169EA88048E0C8F9F382 /* Pods_KragerChatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5524ED30EC4C53575F9BF082 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8AF9A32C0E1381E499B5819 /* Pods_KragerChat.framework */,
+				54B71C95B261178BFEFA9E72 /* Pods_KragerChatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7E04E52B226EDCFF00113064 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +183,8 @@
 				7E1902532230FD5D0054B8F2 /* KragerChat */,
 				7E1902682230FD620054B8F2 /* KragerChatTests */,
 				7E1902522230FD5D0054B8F2 /* Products */,
+				BA580D14585F7B5C6A0B7215 /* Pods */,
+				5524ED30EC4C53575F9BF082 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +318,17 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		BA580D14585F7B5C6A0B7215 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9434B5DE95D00AE3C0B64747 /* Pods-KragerChat.debug.xcconfig */,
+				3946E1AD666F9EEA64F6E42C /* Pods-KragerChat.release.xcconfig */,
+				D99C9ACBEB67F113C0CB16AC /* Pods-KragerChatTests.debug.xcconfig */,
+				33703C123AA42ACDA0B360E9 /* Pods-KragerChatTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +336,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E19026E2230FD620054B8F2 /* Build configuration list for PBXNativeTarget "KragerChat" */;
 			buildPhases = (
+				15B1EED515741558FCF72A69 /* [CP] Check Pods Manifest.lock */,
 				7E19024D2230FD5D0054B8F2 /* Sources */,
 				7E19024E2230FD5D0054B8F2 /* Frameworks */,
 				7E19024F2230FD5D0054B8F2 /* Resources */,
+				51EC466A459B3B62683C083A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +355,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E1902712230FD620054B8F2 /* Build configuration list for PBXNativeTarget "KragerChatTests" */;
 			buildPhases = (
+				9B86A6C8B00A720702175047 /* [CP] Check Pods Manifest.lock */,
 				7E1902612230FD620054B8F2 /* Sources */,
 				7E1902622230FD620054B8F2 /* Frameworks */,
 				7E1902632230FD620054B8F2 /* Resources */,
@@ -394,6 +429,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15B1EED515741558FCF72A69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KragerChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51EC466A459B3B62683C083A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KragerChat/Pods-KragerChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KragerChat/Pods-KragerChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B86A6C8B00A720702175047 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KragerChatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E19024D2230FD5D0054B8F2 /* Sources */ = {
@@ -588,6 +680,7 @@
 		};
 		7E19026F2230FD620054B8F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9434B5DE95D00AE3C0B64747 /* Pods-KragerChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -607,6 +700,7 @@
 		};
 		7E1902702230FD620054B8F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3946E1AD666F9EEA64F6E42C /* Pods-KragerChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +720,7 @@
 		};
 		7E1902722230FD620054B8F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D99C9ACBEB67F113C0CB16AC /* Pods-KragerChatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -647,6 +742,7 @@
 		};
 		7E1902732230FD620054B8F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33703C123AA42ACDA0B360E9 /* Pods-KragerChatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
