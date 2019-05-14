@@ -11,6 +11,7 @@ import UIKit
 class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
+    var client = ChatClient()
     
     lazy var messageBar: MessageBar =  {
         let m = MessageBar()
