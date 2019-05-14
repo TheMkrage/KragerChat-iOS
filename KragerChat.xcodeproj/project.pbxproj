@@ -347,9 +347,11 @@
 				TargetAttributes = {
 					7E1902502230FD5D0054B8F2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					7E1902642230FD620054B8F2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 7E1902502230FD5D0054B8F2;
 					};
 				};
@@ -598,7 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = themkrage.KragerChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -617,7 +619,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = themkrage.KragerChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -637,7 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = themkrage.KragerChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KragerChat.app/KragerChat";
 			};
@@ -658,7 +660,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = themkrage.KragerChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KragerChat.app/KragerChat";
 			};
