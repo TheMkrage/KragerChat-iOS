@@ -59,6 +59,9 @@ extension ChatClient: WebSocketDelegate {
         }
         do {
             let message = try JSONDecoder().decode(Message.self, from: jsonData)
+            if message.photo?.id == 0 {
+                message.photo = nil
+            }
             delegate?.received(message: message)
         } catch let jsonError {
             print(jsonError)

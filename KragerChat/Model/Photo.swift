@@ -10,8 +10,8 @@ import UIKit
 
 class Photos: NSObject {
     static let all = [
-        Photo(name: "krager-smiling", id: 0),
-        Photo(name: "krager-coffee", id: 1)
+        Photo(name: "krager-smiling", id: 1),
+        Photo(name: "krager-coffee", id: 2)
     ]
     
     static func get(id: Int) -> Photo {
