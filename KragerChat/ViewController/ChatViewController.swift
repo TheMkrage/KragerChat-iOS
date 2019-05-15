@@ -12,9 +12,8 @@ class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
     
-    lazy var client: ChatClient = {
+    var client: ChatClient = {
         let c = ChatClient()
-        c.delegate = self
         return c
     }()
     
@@ -34,6 +33,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        client.delegate = self
 
         view.backgroundColor = UIColor.init(named: "bg")
         view.addSubview(chatView)
