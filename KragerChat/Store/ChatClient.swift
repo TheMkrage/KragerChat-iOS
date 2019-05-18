@@ -18,7 +18,7 @@ class ChatClient: NSObject {
     
     var webSocket: WebSocket
     override init() {
-        webSocket = WebSocket(url: URL(string: "ws://localhost:8000/ws")!)
+        webSocket = WebSocket(url: URL(string: "ws://\(Backend.url)/ws")!)
         super.init()
         webSocket.delegate = self
         webSocket.connect()
@@ -45,11 +45,13 @@ class ChatClient: NSObject {
 
 extension ChatClient: WebSocketDelegate {
     func websocketDidConnect(socket: WebSocketClient) {
-        
+        print("connect")
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        
+        print("disconnect")
+        print(error)
+        webSocket.connect()
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
