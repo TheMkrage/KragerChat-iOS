@@ -32,6 +32,8 @@
 		7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */; };
 		7E1902862231BD770054B8F2 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902852231BD770054B8F2 /* Star.swift */; };
 		7E267112228C912D009044BB /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267111228C912C009044BB /* Backend.swift */; };
+		7E267114228FCAB2009044BB /* ThreadStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267113228FCAB2009044BB /* ThreadStore.swift */; };
+		7E267116228FCAE2009044BB /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267115228FCAE2009044BB /* Thread.swift */; };
 		7E2E76E9226D77FA007172ED /* QuoteKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */; };
 		7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EA226D78E4007172ED /* QuoteCell.swift */; };
 		7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */; };
@@ -87,6 +89,8 @@
 		7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingStarBackground.swift; sourceTree = "<group>"; };
 		7E1902852231BD770054B8F2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		7E267111228C912C009044BB /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		7E267113228FCAB2009044BB /* ThreadStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadStore.swift; sourceTree = "<group>"; };
+		7E267115228FCAE2009044BB /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteKeyboard.swift; sourceTree = "<group>"; };
 		7E2E76EA226D78E4007172ED /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
 		7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeyboard.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			children = (
 				7EEA35A4227EAE67000A4585 /* Photo.swift */,
 				7E17D7EC2261CC6B007BF304 /* Message.swift */,
+				7E267115228FCAE2009044BB /* Thread.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 			children = (
 				7ED527BB228A7693009F1393 /* ChatClient.swift */,
 				7E267111228C912C009044BB /* Backend.swift */,
+				7E267113228FCAB2009044BB /* ThreadStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */,
 				7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */,
 				7E1902862231BD770054B8F2 /* Star.swift in Sources */,
+				7E267114228FCAB2009044BB /* ThreadStore.swift in Sources */,
 				7ED527BC228A7693009F1393 /* ChatClient.swift in Sources */,
 				7E17D7ED2261CC6B007BF304 /* Message.swift in Sources */,
 				7E17D7F622645FF5007BF304 /* MessageTextField.swift in Sources */,
@@ -525,6 +532,7 @@
 				7E2E76F1226D8D95007172ED /* Keyboard.swift in Sources */,
 				7E65E7F42255F33200192F98 /* KragerButton.swift in Sources */,
 				7E17D7F122641B28007BF304 /* MessageCell.swift in Sources */,
+				7E267116228FCAE2009044BB /* Thread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
