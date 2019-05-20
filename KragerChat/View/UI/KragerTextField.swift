@@ -26,6 +26,7 @@ class KragerTextField: UITextField {
     func initialize() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(named: "textFieldFill")
+        textAlignment = .center
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 3.0
     }

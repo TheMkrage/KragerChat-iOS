@@ -33,6 +33,37 @@ class ThreadStore: NSObject {
         userDefaults.synchronize()
     }
     
+    func create(name: String, callback: ((Int) -> Void)?) {
+        let url = URL(string: "http://\(Backend.url)/threads")!
+        var request = URLRequest(url: url)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "name": name
+        ]
+        guard let body = (try? JSONSerialization.data(withJSONObject: parameters, options: [])) else {
+            return
+        }
+        request.httpBody = body
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse, error == nil else {
+                    print("error", error ?? "Unknown error")
+                    return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let thread = try decoder.decode(Thread.self, from: data)
+                self.save(thread: thread)
+                callback(thread.id)
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
     func join(id: Int) {
         let url = URL(string: "http://\(Backend.url)/threads/\(id)/join")!
         var request = URLRequest(url: url)

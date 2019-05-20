@@ -81,8 +81,13 @@ class ChatListViewController: UIViewController {
     }
     
     @objc func addChat(_ sender: UIButton) {
-        let vc = AddChatViewController()
-        present(vc, animated: true, completion: nil)
+        let vc = AddChatViewController(threadStore: threadStore)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.barTintColor = UIColor.init(named: "bg")
+        nav.navigationBar.tintColor = .white
+        nav.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        nav.navigationBar.isTranslucent = false
+        present(nav, animated: true, completion: nil)
     }
 }
 
