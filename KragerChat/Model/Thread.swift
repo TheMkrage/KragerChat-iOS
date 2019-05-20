@@ -8,9 +8,10 @@
 
 import UIKit
 
-class Thread: NSObject {
+class Thread: Codable {
     var name: String
     var id: Int
+    var lastMessage: Message?
     
     init(name: String, id: Int) {
         self.name = name

@@ -148,22 +148,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KragerChat/View/UI/Chat/TableCells/MessageCell.swift"
-            timestampString = "578812062.938013"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "photoView"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KragerChat/View/UI/Chat/TableCells/MessageCell.swift"
             timestampString = "578812062.938432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

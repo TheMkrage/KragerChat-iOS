@@ -11,6 +11,7 @@ import UIKit
 class ChatViewController: UIViewController {
     
     var chatViewModel = ChatViewModel()
+    var threadID: Int
     
     var client: ChatClient = {
         let c = ChatClient()
@@ -30,6 +31,15 @@ class ChatViewController: UIViewController {
         let c = ChatView(viewModel: chatViewModel)
         return c
     }()
+    
+    init(threadID: Int) {
+        self.threadID = threadID
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

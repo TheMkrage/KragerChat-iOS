@@ -75,7 +75,12 @@ class HomeViewController: UIViewController {
     }
     
     @objc func letsGoPressed(_ sender: UIButton) {
-        let vc = ChatViewController()
-        show(vc, sender: self)
+        let vc = ChatListViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.barTintColor = UIColor.init(named: "bg")
+        nav.navigationBar.tintColor = .white
+        nav.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        nav.navigationBar.isTranslucent = false
+        show(nav, sender: self)
     }
 }

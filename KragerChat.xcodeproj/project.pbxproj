@@ -26,14 +26,17 @@
 		7E19025F2230FD620054B8F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E19025D2230FD620054B8F2 /* LaunchScreen.storyboard */; };
 		7E19026A2230FD620054B8F2 /* KragerChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902692230FD620054B8F2 /* KragerChatTests.swift */; };
 		7E190275223100260054B8F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E190274223100260054B8F2 /* HomeViewController.swift */; };
-		7E190279223100910054B8F2 /* KragerTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E190278223100910054B8F2 /* KragerTextFieldViewModel.swift */; };
 		7E19027C223100A20054B8F2 /* KragerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E19027B223100A20054B8F2 /* KragerTextField.swift */; };
 		7E19027E223102AC0054B8F2 /* EarthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E19027D223102AC0054B8F2 /* EarthView.swift */; };
 		7E1902832231109E0054B8F2 /* ShootingStarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */; };
 		7E1902862231BD770054B8F2 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1902852231BD770054B8F2 /* Star.swift */; };
+		7E223A0922921AE400D50AB6 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E223A0822921AE400D50AB6 /* ChatListTableViewCell.swift */; };
+		7E223A0B22922FF200D50AB6 /* AddChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E223A0A22922FF200D50AB6 /* AddChatViewController.swift */; };
 		7E267112228C912D009044BB /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267111228C912C009044BB /* Backend.swift */; };
 		7E267114228FCAB2009044BB /* ThreadStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267113228FCAB2009044BB /* ThreadStore.swift */; };
 		7E267116228FCAE2009044BB /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E267115228FCAE2009044BB /* Thread.swift */; };
+		7E2671182291D409009044BB /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2671172291D409009044BB /* ChatListViewController.swift */; };
+		7E26711A22921A2A009044BB /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26711922921A2A009044BB /* ChatListViewModel.swift */; };
 		7E2E76E9226D77FA007172ED /* QuoteKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */; };
 		7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EA226D78E4007172ED /* QuoteCell.swift */; };
 		7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */; };
@@ -83,14 +86,17 @@
 		7E1902692230FD620054B8F2 /* KragerChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerChatTests.swift; sourceTree = "<group>"; };
 		7E19026B2230FD620054B8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E190274223100260054B8F2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7E190278223100910054B8F2 /* KragerTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerTextFieldViewModel.swift; sourceTree = "<group>"; };
 		7E19027B223100A20054B8F2 /* KragerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KragerTextField.swift; sourceTree = "<group>"; };
 		7E19027D223102AC0054B8F2 /* EarthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthView.swift; sourceTree = "<group>"; };
 		7E1902822231109E0054B8F2 /* ShootingStarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingStarBackground.swift; sourceTree = "<group>"; };
 		7E1902852231BD770054B8F2 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		7E223A0822921AE400D50AB6 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		7E223A0A22922FF200D50AB6 /* AddChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatViewController.swift; sourceTree = "<group>"; };
 		7E267111228C912C009044BB /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		7E267113228FCAB2009044BB /* ThreadStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadStore.swift; sourceTree = "<group>"; };
 		7E267115228FCAE2009044BB /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		7E2671172291D409009044BB /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		7E26711922921A2A009044BB /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		7E2E76E8226D77FA007172ED /* QuoteKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteKeyboard.swift; sourceTree = "<group>"; };
 		7E2E76EA226D78E4007172ED /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
 		7E2E76EE226D7C8A007172ED /* PhotoKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoKeyboard.swift; sourceTree = "<group>"; };
@@ -236,6 +242,8 @@
 			children = (
 				7E190274223100260054B8F2 /* HomeViewController.swift */,
 				7E17D7E22261B979007BF304 /* ChatViewController.swift */,
+				7E2671172291D409009044BB /* ChatListViewController.swift */,
+				7E223A0A22922FF200D50AB6 /* AddChatViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -243,8 +251,8 @@
 		7E190277223100510054B8F2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7E190278223100910054B8F2 /* KragerTextFieldViewModel.swift */,
 				7E17D7E92261CC15007BF304 /* ChatViewModel.swift */,
+				7E26711922921A2A009044BB /* ChatListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +283,14 @@
 				7E1902852231BD770054B8F2 /* Star.swift */,
 			);
 			path = ShootingStars;
+			sourceTree = "<group>";
+		};
+		7E26711B22921AB3009044BB /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				7E223A0822921AE400D50AB6 /* ChatListTableViewCell.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 		7E2E76E7226D77E6007172ED /* Keyboards */ = {
@@ -309,6 +325,7 @@
 		7E65E7F22255F32800192F98 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7E26711B22921AB3009044BB /* ChatList */,
 				7E17D7E42261BB3C007BF304 /* Chat */,
 				7E19027B223100A20054B8F2 /* KragerTextField.swift */,
 				7E65E7F32255F33200192F98 /* KragerButton.swift */,
@@ -516,13 +533,16 @@
 				7E2E76EF226D7C8A007172ED /* PhotoKeyboard.swift in Sources */,
 				7EEA35A3227EAA45000A4585 /* PhotoCell.swift in Sources */,
 				7E2E76EB226D78E4007172ED /* QuoteCell.swift in Sources */,
+				7E2671182291D409009044BB /* ChatListViewController.swift in Sources */,
+				7E223A0922921AE400D50AB6 /* ChatListTableViewCell.swift in Sources */,
 				7E267112228C912D009044BB /* Backend.swift in Sources */,
 				7E17D7E62261BB56007BF304 /* ChatView.swift in Sources */,
 				7E65E7F62256A80100192F98 /* UIView+Extensions.swift in Sources */,
 				7E3ED11D223390DD00080C23 /* MoonView.swift in Sources */,
+				7E26711A22921A2A009044BB /* ChatListViewModel.swift in Sources */,
+				7E223A0B22922FF200D50AB6 /* AddChatViewController.swift in Sources */,
 				7E04E52D22702CF300113064 /* QuoteTextView.swift in Sources */,
 				7E17D7F422645EA9007BF304 /* MessageBar.swift in Sources */,
-				7E190279223100910054B8F2 /* KragerTextFieldViewModel.swift in Sources */,
 				7E190275223100260054B8F2 /* HomeViewController.swift in Sources */,
 				7E17D7E32261B979007BF304 /* ChatViewController.swift in Sources */,
 				7E17D7EA2261CC15007BF304 /* ChatViewModel.swift in Sources */,
