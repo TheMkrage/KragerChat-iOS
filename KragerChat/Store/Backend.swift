@@ -9,5 +9,5 @@
 import UIKit
 
 class Backend: NSObject {
-    static let url = "localhost:8000" //"https://kragerchat.herokuapp.com/" 
+    static let url = "kragerchat.herokuapp.com" 
 }

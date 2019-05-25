@@ -97,7 +97,9 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let thread = viewModel.threads[indexPath.row]
+        guard let thread = viewModel.threads[indexPath.row] else {
+            return UITableViewCell()
+        }
         let cell = ChatListTableViewCell(style: .default, reuseIdentifier: "chatList")
         
         cell.nameLabel.text = thread.name
@@ -107,7 +109,9 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let thread = viewModel.threads[indexPath.row]
+        guard let thread = viewModel.threads[indexPath.row] else {
+            return
+        }
         let vc = ChatViewController(threadID: thread.id)
         show(vc, sender: self)
     }

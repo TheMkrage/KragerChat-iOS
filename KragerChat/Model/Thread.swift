@@ -13,6 +13,11 @@ class Thread: Codable {
     var id: Int
     var lastMessage: Message?
     
+    enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case id = "ID"
+    }
+    
     init(name: String, id: Int) {
         self.name = name
         self.id = id
