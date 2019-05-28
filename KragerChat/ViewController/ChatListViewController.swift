@@ -39,9 +39,13 @@ class ChatListViewController: UIViewController {
     
     lazy var viewModel: ChatListViewModel = {
         let vm = ChatListViewModel()
-        vm.threads = threadStore.getAll()
         return vm
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.threads = threadStore.getAll()
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +105,6 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let cell = ChatListTableViewCell(style: .default, reuseIdentifier: "chatList")
-        
         cell.nameLabel.text = thread.name
         cell.lastMessageLabel.text = thread.lastMessage?.contents
         

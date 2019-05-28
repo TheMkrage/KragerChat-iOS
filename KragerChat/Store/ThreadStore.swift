@@ -52,17 +52,13 @@ class ThreadStore: NSObject {
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        let parameters: [String: Any] = [
-            "name": name
-        ]
-        guard let body = (try? JSONSerialization.data(withJSONObject: parameters, options: [])) else {
-            return
-        }
-        request.httpBody = body
+        
+        let postData = NSMutableData(data: "name=\(name)".data(using: String.Encoding.utf8)!)
+        request.httpBody = postData as Data
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data,
-                let response = response as? HTTPURLResponse, error == nil else {
+                let _ = response as? HTTPURLResponse, error == nil else {
                     print("error", error ?? "Unknown error")
                     return
             }

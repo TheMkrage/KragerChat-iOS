@@ -14,13 +14,17 @@ class ChatListTableViewCell: UITableViewCell {
     
     var nameLabel: UILabel = {
         let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
         l.font = UIFont(name: "HelveticaNeue-Medium", size: 14.0)
+        l.textColor = .white
         return l
     }()
     
     var lastMessageLabel: UILabel = {
         let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
         l.font = UIFont(name: "HelveticaNeue", size: 12.0)
+        l.textColor = .white
         return l
     }()
     
