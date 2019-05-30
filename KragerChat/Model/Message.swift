@@ -10,14 +10,31 @@ import UIKit
 
 class Message: NSObject, Codable {
     var contents: String
+    var senderID: Int
     var photo: Photo?
-    var didUserSend: Bool? = false
     var sender: String
     
-    init(message: String = "", photo: Photo? = nil, didUserSend: Bool, sender: String = "") {
+    private func getID() -> Int {
+        let userDefaults = UserDefaults.standard
+        guard let id = userDefaults.object(forKey: "id") as? Int else {
+            let newId = Int.random(in: 0 ..< 100000000)
+            userDefaults.set(newId, forKey: "id")
+            userDefaults.synchronize()
+            return newId
+        }
+        return id
+    }
+    
+    var didUserSend: Bool {
+        get {
+            return senderID == getID()
+        }
+    }
+    
+    init(message: String = "", photo: Photo? = nil, sender: String = "", senderID: Int) {
         self.contents = message
         self.photo = photo
-        self.didUserSend = didUserSend
         self.sender = sender
+        self.senderID = senderID
     }
 }

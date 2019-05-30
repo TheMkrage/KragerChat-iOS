@@ -31,6 +31,17 @@ class ChatClient: NSObject {
         webSocket.delegate = nil
     }
     
+    func getID() -> Int {
+        let userDefaults = UserDefaults.standard
+        guard let id = userDefaults.object(forKey: "id") as? Int else {
+            let newId = Int.random(in: 0 ..< 100000000)
+            userDefaults.set(newId, forKey: "id")
+            userDefaults.synchronize()
+            return newId
+        }
+        return id
+    }
+    
     func send(message: Message) {
         do {
             let jsonData = try JSONEncoder().encode(message)

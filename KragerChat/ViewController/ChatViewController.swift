@@ -25,9 +25,6 @@ class ChatViewController: UIViewController {
     }()
     
     lazy var chatView: ChatView = {
-        chatViewModel.messages.append(Message(message: "Hey there!", didUserSend: true))
-        chatViewModel.messages.append(Message(message: "This is Krager Chat!", didUserSend: false, sender: "Krager"))
-        chatViewModel.messages.append(Message(message: "OMG! This app is so cool and way better than Ishaan Chat, Why? Because Ishaan chat doesnt and will never exist", didUserSend: true))
         let c = ChatView(viewModel: chatViewModel)
         return c
     }()
@@ -93,13 +90,13 @@ extension ChatViewController: MessageBarDelegate {
         // if photo exists, send it first in separate message
         // send photo if it exists
         if let photo = photo {
-            let m = Message(photo: photo, didUserSend: true)
+            let m = Message(photo: photo, senderID: client.getID())
             chatViewModel.messages.append(m)
             client.send(message: m)
         }
         // send message if it exists
         if message != "" {
-            let m = Message(message: message, didUserSend: true)
+            let m = Message(message: message, senderID: client.getID())
             chatViewModel.messages.append(m)
             client.send(message: m)
         }
@@ -113,7 +110,6 @@ extension ChatViewController: MessageBarDelegate {
 
 extension ChatViewController: ChatClientDelegate {
     func received(message: Message) {
-        message.didUserSend = false
         chatViewModel.messages.append(message)
         chatView.tableView.reloadData()
         chatView.tableView.scrollToRow(at: IndexPath(row: chatViewModel.messages.count - 1, section: 0), at: .bottom, animated: true)
