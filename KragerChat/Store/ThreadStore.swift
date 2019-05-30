@@ -122,8 +122,15 @@ class ThreadStore: NSObject {
             }
             do {
                 let decoder = JSONDecoder()
-                let message = try decoder.decode([Message].self, from: data)
-                callback?(message)
+                let messages = try decoder.decode([Message].self, from: data)
+                // Filter out the invalid photo objects received from the backend
+                let filteredMessages = messages.map({ (message) -> Message in
+                    if message.photo == nil || message.photo?.id == 0 {
+                        message.photo = nil
+                    }
+                    return message
+                })
+                callback?(filteredMessages)
             } catch let parsingError {
                 print("Error", parsingError)
             }

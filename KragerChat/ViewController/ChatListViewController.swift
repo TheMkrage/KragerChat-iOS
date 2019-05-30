@@ -126,6 +126,7 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let thread = viewModel.threads[indexPath.row]
         let vc = ChatViewController(threadID: thread.id)
+        vc.chatViewModel.messages = thread.messages ?? []
         show(vc, sender: self)
     }
 }
