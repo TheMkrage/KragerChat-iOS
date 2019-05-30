@@ -11,7 +11,7 @@ import UIKit
 class Thread: Codable {
     var name: String
     var id: Int
-    var lastMessage: Message?
+    var messages: [Message]?
     
     enum CodingKeys: String, CodingKey {
         case name = "Name"

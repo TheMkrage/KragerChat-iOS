@@ -9,5 +9,5 @@
 import UIKit
 
 class ChatListViewModel: NSObject {
-    var threads = [Thread?]()
+    var threads = [Thread]()
 }

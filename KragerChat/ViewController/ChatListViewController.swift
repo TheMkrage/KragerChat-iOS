@@ -43,7 +43,21 @@ class ChatListViewController: UIViewController {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.threads = threadStore.getAll()
+        // Add newThreads to the viewModel without clearing old ones
+        let newThreads = threadStore.getAll().filter { (thread) -> Bool in
+            return !viewModel.threads.contains(where: { (_thread) -> Bool in
+                return _thread.id == thread.id
+            })
+        }
+        viewModel.threads.append(contentsOf: newThreads)
+        for thread in viewModel.threads {
+            threadStore.getMessages(id: thread.id) { (messages) in
+                thread.messages = messages
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
         tableView.reloadData()
     }
 
@@ -101,20 +115,16 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let thread = viewModel.threads[indexPath.row] else {
-            return UITableViewCell()
-        }
+        let thread = viewModel.threads[indexPath.row]
         let cell = ChatListTableViewCell(style: .default, reuseIdentifier: "chatList")
         cell.nameLabel.text = thread.name
-        cell.lastMessageLabel.text = thread.lastMessage?.contents
+        cell.lastMessageLabel.text = thread.messages?.last?.contents
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let thread = viewModel.threads[indexPath.row] else {
-            return
-        }
+        let thread = viewModel.threads[indexPath.row]
         let vc = ChatViewController(threadID: thread.id)
         show(vc, sender: self)
     }

@@ -30,6 +30,7 @@ class AddChatViewController: UIViewController {
     lazy var ChatTypeSegmentedControl: UISegmentedControl = {
         let s = UISegmentedControl(items: AddChatType.all.map({ $0.title }))
         s.translatesAutoresizingMaskIntoConstraints = false
+        s.selectedSegmentIndex = 0
         s.addTarget(self, action: #selector(changedChatType(_:)), for: .valueChanged)
         return s
     }()
@@ -61,6 +62,7 @@ class AddChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.placeholder = "Name the New Chat!"
         title = "Add Chat"
         
         view.backgroundColor = UIColor.init(named: "bg")

@@ -13,8 +13,8 @@ class ChatViewController: UIViewController {
     var chatViewModel = ChatViewModel()
     var threadID: Int
     
-    var client: ChatClient = {
-        let c = ChatClient()
+    lazy var client: ChatClient = {
+        let c = ChatClient(id: threadID)
         return c
     }()
     

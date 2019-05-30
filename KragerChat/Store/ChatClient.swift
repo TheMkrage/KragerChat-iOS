@@ -15,10 +15,12 @@ protocol ChatClientDelegate: class {
 
 class ChatClient: NSObject {
     weak var delegate: ChatClientDelegate?
-    
+    var id: Int
     var webSocket: WebSocket
-    override init() {
-        webSocket = WebSocket(url: URL(string: "ws://\(Backend.url)/ws")!)
+    
+    init(id: Int) {
+        self.webSocket = WebSocket(url: URL(string: "ws://\(Backend.url)/ws?threadID=\(id)")!)
+        self.id = id
         super.init()
         webSocket.delegate = self
         webSocket.connect()

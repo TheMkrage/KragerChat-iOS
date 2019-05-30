@@ -10,18 +10,23 @@ import UIKit
 
 class ThreadStore: NSObject {
     
-    func getAll() -> [Thread?] {
+    func getAll() -> [Thread] {
         let userDefaults = UserDefaults.standard
         guard let threadsData = userDefaults.array(forKey: "threads") as? [Data] else {
             return []
         }
         let threads = threadsData.map { (data) -> Thread? in
-            guard let thread = try? PropertyListDecoder().decode(Thread.self, from: data) as? Thread else {
+            guard let thread = try? PropertyListDecoder().decode(Thread.self, from: data) else {
                 return nil
             }
             return thread
         }
-        return threads
+        guard let toReturn = threads.filter({ (thread) -> Bool in
+            return thread != nil
+        }) as? [Thread] else {
+            return [Thread]()
+        }
+        return toReturn
     }
     
     private func getData(thread: Thread) -> Data? {
@@ -97,6 +102,28 @@ class ThreadStore: NSObject {
                 let decoder = JSONDecoder()
                 let thread = try decoder.decode(Thread.self, from: data)
                 self.save(thread: thread)
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    func getMessages(id: Int, page: Int = 0, callback: (([Message]) -> Void)?) {
+        let url = URL(string: "https://\(Backend.url)/threads/\(id)/messages?page=\(page)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                let _ = response as? HTTPURLResponse, error == nil else {
+                    print("error", error ?? "Unknown error")
+                    return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let message = try decoder.decode([Message].self, from: data)
+                callback?(message)
             } catch let parsingError {
                 print("Error", parsingError)
             }
